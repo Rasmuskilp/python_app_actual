@@ -14,3 +14,7 @@ run_list 'python_app::default'
 
 # Specify a custom source for a single cookbook:
 cookbook 'python_app', path: '.'
+cookbook 'nodejs', '= 5.0.0', :supermarket
+cookbook 'apt', '~> 7.2.0'
+cookbook 'pm2', '~> 0.7.4'
+cookbook 'poise-python', '~> 1.7.0'

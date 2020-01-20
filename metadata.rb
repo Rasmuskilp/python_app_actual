@@ -18,3 +18,7 @@ chef_version '>= 14.0'
 # a Supermarket.
 #
 # source_url 'https://github.com/<insert_org_here>/python_app'
+depends 'nodejs', '~> 5.0.0'
+depends 'apt'
+depends 'pm2', '~> 0.7.4'
+depends 'poise-python', '~> 1.7.0'
