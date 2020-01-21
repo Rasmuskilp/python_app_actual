@@ -27,3 +27,9 @@ urllib3	1.25.3	1.25.7
 wcwidth	0.1.7	0.1.8
 zipp	0.5.2	2.0.0
 ## CSV file path ~/Downloads/ItJobsWatchTop30.csv
+## 1.Have a github repo for the app
+## 2.Have a working app environment that installs and updates all the necessary plugins - use packer to create an - AMI
+## 3. Have a cookbook for the reverse nginx proxy . - AMI
+## 4. Create a Jenkins CI pipeline, that listens to the app - will do the environment and the pytests - if successful sends it forward.
+## 5. the nginx proxy should do the integration and unit tests - the last step.
+## 6. If successful creates an production environment - AMI
