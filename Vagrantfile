@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
   #app.hostsupdater.aliases = ["development.local"]
   config.vm.network "forwarded_port", guest: 8000, host: 8000
   config.vm.synced_folder "It_Jobs_Watch_Data_Package-master", "/home/vagrant/app"
+  config.vm.synced_folder "Downloads", "/home/vagrant/Downloads"
   config.vm.provision 'chef_solo' do |chef|
     chef.cookbooks_path = "/opscode/cookbooks"
     chef.add_recipe 'python_app'
