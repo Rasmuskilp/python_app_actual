@@ -65,8 +65,7 @@ end
 bash 'run tests' do
   code <<-EOH
   sudo mkdir Downloads
-  cd vagrant
-  python3 -m pytest tests
+  python3 -m pytest app/tests/
   EOH
 end
 # remote_directory '/home/ubuntu/app' do
