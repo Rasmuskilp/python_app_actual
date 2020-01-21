@@ -34,7 +34,7 @@ end
 #package 'python'
 python 'install packages' do
 code <<-EOH
-pip install "atomicwrites"
+pip install atomicwrites
 pip install "attrs"
 pip install "beautifulsoup4"
 pip install "certifi"
