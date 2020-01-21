@@ -14,11 +14,11 @@ importlib-metadata	0.19	1.4.0
 more-itertools	7.2.0	8.1.0
 packaging	19.1	20.0
 pip	19.2.3	19.3.1
-pluggy	0.13.1	0.13.1
+pluggy	0.12.0	0.13.1
 py	1.8.0	1.8.1
 pyodbc	4.0.27	4.0.28
 pyparsing	2.4.2	2.4.6
-pytest	5.1.0	5.3.3
+pytest	5.1.0	5.3.4
 requests	2.22.0	2.22.0
 setuptools	41.2.0	45.1.0
 six	1.12.0	1.14.0
