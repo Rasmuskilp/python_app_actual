@@ -16,51 +16,57 @@ end
  #   version '3'
  # end
  #   sudo npm install pm2 -g
-
+#   sudo easy_install pip
+#   sudo apt-get install python-dev python-pip -q -y
+#alias python=python3
  bash 'install python and etc'do
    code <<-EOH
    sudo apt-get update -y
    sudo apt-get upgrade -y
    sudo apt-get install nginx -y
    sudo apt-get install git -y
-   sudo apt-get install python-dev python-pip -q -y
+   sudo apt-get install python3.7 -y
    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
    sudo apt-get install nodejs -y
+   alias python=python3
    sudo apt-get install python3-pip -y
-   sudo apt-get install python-setuptools
-   sudo easy_install pip
+   sudo apt-get install python-setuptools -y
+   sudo apt-get install python3-pytest -y
    EOH
  end
 #package 'python'
-python 'install packages' do
+#pip install -r app/requirements.txt
+
+bash 'install packages' do
 code <<-EOH
-pip install atomicwrites
-pip install "attrs"
-pip install "beautifulsoup4"
-pip install "certifi"
-pip install "colorama"
-pip install "idna"
-pip install "importlib-metadata"
-pip install "more-itertools"
-pip install "packaging"
-pip install "pluggy"
-pip install "py"
-pip install "pyodbc"
-pip install" pyparsing"
-pip install "pytest"
-pip install "requests"
-pip install "setuptools"
-pip install "six"
-pip install "soupsieve"
-pip install "urllib3"
-pip install "wcwidth"
-pip install "zipp"
+pip3 install "atomicwrites"
+pip3 install "attrs"
+pip3 install "beautifulsoup4"
+pip3 install "certifi"
+pip3 install "colorama"
+pip3 install "idna"
+pip3 install "importlib-metadata"
+pip3 install "more-itertools"
+pip3 install "packaging"
+pip3 install "pluggy"
+pip3 install "py"
+pip3 install "pyodbc"
+pip3 install" pyparsing"
+pip3 install "pytest"
+pip3 install "requests"
+pip3 install "setuptools"
+pip3 install "six"
+pip3 install "soupsieve"
+pip3 install "urllib3"
+pip3 install "wcwidth"
+pip3 install "zipp"
 EOH
 end
 bash 'run tests' do
   code <<-EOH
-  cd app
-  python -m pytest tests
+  sudo mkdir Downloads
+  cd vagrant
+  python3 -m pytest tests
   EOH
 end
 # remote_directory '/home/ubuntu/app' do

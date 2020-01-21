@@ -12,12 +12,12 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "bento/ubuntu-18.04"
   #app.vm.network "private_network", ip: "192.168.10.100"
   #app.hostsupdater.aliases = ["development.local"]
   config.vm.network "forwarded_port", guest: 8000, host: 8000
-  config.vm.synced_folder "It_Jobs_Watch_Data_Package-master", "/home/ubuntu/app"
-  config.vm.provision 'chef_zero' do |chef|
+  config.vm.synced_folder "It_Jobs_Watch_Data_Package-master", "/home/vagrant/app"
+  config.vm.provision 'chef_solo' do |chef|
     chef.cookbooks_path = "/opscode/cookbooks"
     chef.add_recipe 'python_app'
     chef.nodes_path = 'nodes'
