@@ -62,12 +62,12 @@ pip3 install "wcwidth"
 pip3 install "zipp"
 EOH
 end
-bash 'run tests' do
-  code <<-EOH
-  cd ~/app
-  python3 -m pytest tests/
-  EOH
-end
+# bash 'run tests' do
+#   code <<-EOH
+#   cd ~/app
+#   python3 -m pytest tests/
+#   EOH
+# end
 # remote_directory '/home/ubuntu/app' do
 # source 'It_Jobs_Watch_Data_Package-master'
 # owner 'root'

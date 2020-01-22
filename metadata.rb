@@ -1,4 +1,4 @@
-name 'python_app'
+name 'python_env'
 maintainer 'The Authors'
 maintainer_email 'you@example.com'
 license 'All Rights Reserved'
