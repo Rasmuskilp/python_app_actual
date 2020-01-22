@@ -1,8 +1,5 @@
 # python_app
-## In order to install packer
-### Touch Berksfile
-### berks install
-#berks vendor
+
 TODO: Enter the cookbook description here.
 
 #pip install

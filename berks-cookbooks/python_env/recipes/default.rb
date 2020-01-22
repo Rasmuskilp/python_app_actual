@@ -32,6 +32,7 @@ end
    sudo apt-get install python3-pip -y
    sudo apt-get install python-setuptools -y
    sudo apt-get install python3-pytest -y
+   sudo apt=get install default-jre -y
    EOH
  end
 #package 'python'

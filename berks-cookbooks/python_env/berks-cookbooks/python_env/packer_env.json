@@ -29,11 +29,20 @@
       {
     "type": "chef-solo",
     "cookbook_paths": ["./berks-cookbooks"],
-    "run_list": ["python_env::default"]
+    "run_list": ["python_app::default"]
   },
   {
     "type": "shell",
     "inline": ["mkdir /home/ubuntu/app"]
+  },
+  {
+    "type": "file",
+    "source": "It_Jobs_Watch_Data_Package-master/",
+    "destination": "/home/ubuntu/app"
+  },
+  {
+    "type": "shell",
+    "inline": ["cd /home/ubuntu/app", "sudo npm install"]
   }
 ]
 }
