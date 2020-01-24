@@ -23,7 +23,7 @@
     },
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
-    "ami_name": "rasmus-kilp-app-dev-env-{{timestamp}}"
+    "ami_name": "rasmus-kilp-pre-production-{{timestamp}}"
   }],
   "provisioners": [
       {
@@ -37,12 +37,8 @@
   },
   {
     "type": "file",
-    "source": "It_Jobs_Watch_Data_Package-master/",
+    "source": "It_Jobs_Watch_Data_Package-master",
     "destination": "/home/ubuntu/app"
-  },
-  {
-    "type": "shell",
-    "inline": ["cd /home/ubuntu/app", "sudo npm install"]
   }
 ]
 }

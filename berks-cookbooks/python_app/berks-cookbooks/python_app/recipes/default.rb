@@ -33,19 +33,17 @@ end
    sudo apt-get install python-setuptools -y
    sudo apt-get install python3-pytest -y
    sudo apt-get install default-jre -y
-   sudo apt-get install unzip -y
-   sudo apt-get install chef-zero -y
+   wget https://releases.hashicorp.com/packer/1.5.1/packer_1.5.1_linux_amd64.zip
+   unzip packer_1.5.1_linux_amd64.zip  # sudo apt install unzip
+   sudo mv packer /bin/local/
+   export PATH="$PATH:/bin/local/packer"
+   source /etc/environment
+   sudo apt-get install -y chef-zero
    EOH
  end
 #package 'python'
 #pip install -r app/requirements.txt
-bash 'install packer' do
-  code <<-EOH
-  wget https://releases.hashicorp.com/packer/1.5.1/packer_1.5.1_linux_amd64.zip
-  unzip packer_1.5.1_linux_amd64.zip
-  sudo mv packer /usr/local/bin
-  EOH
-end
+
 bash 'install packages' do
 code <<-EOH
 pip3 install "atomicwrites"

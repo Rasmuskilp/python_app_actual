@@ -23,7 +23,7 @@
     },
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
-    "ami_name": "rasmus-kilp-pre-production-{{timestamp}}"
+    "ami_name": "rasmus-kilp-app-dev-env-{{timestamp}}"
   }],
   "provisioners": [
       {
@@ -35,9 +35,14 @@
     "type": "shell",
     "inline": ["mkdir /home/ubuntu/app"]
   },
-  {"type": "file",
-    "source": "/c/opscode/cookbooks/python_app",
+  {
+    "type": "file",
+    "source": "It_Jobs_Watch_Data_Package-master/",
     "destination": "/home/ubuntu/app"
+  },
+  {
+    "type": "shell",
+    "inline": ["cd /home/ubuntu/app", "sudo npm install"]
   }
 ]
 }

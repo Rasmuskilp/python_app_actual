@@ -32,20 +32,11 @@ end
    sudo apt-get install python3-pip -y
    sudo apt-get install python-setuptools -y
    sudo apt-get install python3-pytest -y
-   sudo apt-get install default-jre -y
-   sudo apt-get install unzip -y
-   sudo apt-get install chef-zero -y
    EOH
  end
 #package 'python'
 #pip install -r app/requirements.txt
-bash 'install packer' do
-  code <<-EOH
-  wget https://releases.hashicorp.com/packer/1.5.1/packer_1.5.1_linux_amd64.zip
-  unzip packer_1.5.1_linux_amd64.zip
-  sudo mv packer /usr/local/bin
-  EOH
-end
+
 bash 'install packages' do
 code <<-EOH
 pip3 install "atomicwrites"
@@ -71,12 +62,12 @@ pip3 install "wcwidth"
 pip3 install "zipp"
 EOH
 end
-# bash 'run tests' do
-#   code <<-EOH
-#   cd ~/app
-#   python3 -m pytest tests/
-#   EOH
-# end
+bash 'run tests' do
+  code <<-EOH
+  cd ~/app
+  python3 -m pytest tests/
+  EOH
+end
 # remote_directory '/home/ubuntu/app' do
 # source 'It_Jobs_Watch_Data_Package-master'
 # owner 'root'
