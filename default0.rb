@@ -32,24 +32,11 @@ end
    sudo apt-get install python3-pip -y
    sudo apt-get install python-setuptools -y
    sudo apt-get install python3-pytest -y
-   sudo apt-get install default-jre -y
-   sudo apt-get install unzip -y
-   sudo apt-get install chef-zero -y
-   sudo adduser jenkins
-   sudo usermod -aG sudo jenkins
-   sudo mkdir /home/jenkins/.ssh
-   sudo touch /home/jenkins/.ssh/authorized_keys
    EOH
  end
 #package 'python'
 #pip install -r app/requirements.txt
-bash 'install packer' do
-  code <<-EOH
-  wget https://releases.hashicorp.com/packer/1.5.1/packer_1.5.1_linux_amd64.zip
-  unzip packer_1.5.1_linux_amd64.zip
-  sudo mv packer /usr/local/bin
-  EOH
-end
+
 bash 'install packages' do
 code <<-EOH
 pip3 install "atomicwrites"
